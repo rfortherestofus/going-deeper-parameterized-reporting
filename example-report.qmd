@@ -5,6 +5,8 @@ execute:
   echo: false
   warning: false
   message: false
+params:
+  country: "Afghanistan"
 ---
 
 ```{r}
@@ -16,10 +18,10 @@ library(gapminder)
 life_expectancy <-
   gapminder |>
   select(country, year, lifeExp) |> 
-  filter(country == "Afghanistan")
+  filter(country == params$country)
 ```
 
-## Life Expectancy in Afghanistan
+## Life Expectancy in `r params$country`
 
 ```{r}
 ggplot(
