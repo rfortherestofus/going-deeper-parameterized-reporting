@@ -1,0 +1,35 @@
+---
+title: "Population Report"
+format: html
+execute: 
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+library(tidyverse)
+library(gapminder)
+```
+
+```{r}
+population_2007 <-
+  gapminder |>
+  filter(year == 2007) |>
+  filter(continent == "Asia") |>
+  select(country, pop)
+```
+
+## 2007 Population by Country in Asia 
+
+```{r}
+ggplot(
+  data = population_2007,
+  aes(
+    x = pop,
+    y = country
+  )
+) +
+  geom_col() +
+  theme_minimal()
+```
