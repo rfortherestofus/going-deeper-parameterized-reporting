@@ -5,7 +5,7 @@ library(gapminder)
 continents <-
   gapminder |>
   distinct(TODO) |>
-  pull(TODO) |>
+  pull(TODO) |> 
   as.character()
 
 reports <-

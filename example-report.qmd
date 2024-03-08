@@ -6,7 +6,7 @@ execute:
   warning: false
   message: false
 params:
-  country: "Afghanistan"
+  country: Afghanistan
 ---
 
 ```{r}
