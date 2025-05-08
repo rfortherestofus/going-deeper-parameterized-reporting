@@ -12,7 +12,11 @@ reports <-
   tibble(
     input = "example-report.qmd",
     output_file = str_glue("{countries}.html"),
-    execute_params = map(countries, ~ list(country = .))
+    execute_params =
+      map(countries, ~ list(
+        country = .,
+        start_year = 1990
+      ))
   )
 
 pwalk(reports, quarto_render)

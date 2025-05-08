@@ -7,6 +7,7 @@ execute:
   message: false
 params:
   country: Afghanistan
+  start_year: 1970
 ---
 
 ```{r}
@@ -17,8 +18,9 @@ library(gapminder)
 ```{r}
 life_expectancy <-
   gapminder |>
-  select(country, year, lifeExp) |> 
-  filter(country == params$country)
+  select(country, year, lifeExp) |>
+  filter(country == params$country) |> 
+  filter(year >= params$start_year)
 ```
 
 ## Life Expectancy in `r params$country`
